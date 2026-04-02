@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KeyStudios | Unlocking Imagination</title>
+    <title>InnStudios | Welcome to the Inn</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -92,7 +92,7 @@
             font-weight: 900;
             margin-bottom: 20px;
             line-height: 0.9;
-            letter-spacing: -3px;
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
@@ -128,9 +128,9 @@
         /* --- FEATURES --- */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            padding: 60px 8% 100px;
+            padding: 60px 8% 80px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -145,7 +145,7 @@
 
         .feature-card:hover {
             border-color: var(--blue);
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             background: #12161d;
         }
 
@@ -167,28 +167,108 @@
             font-weight: 300;
         }
 
+        /* --- GAMES SECTION --- */
+        .games-section {
+            padding: 60px 8% 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 50px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .game-card {
+            background: var(--card);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .game-thumb {
+            width: 100%;
+            height: 200px;
+            background-color: #1a1e24;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .game-info p {
+            color: var(--subtext);
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .play-btn {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--blue);
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .play-btn:hover {
+            background: var(--blue);
+            color: #000;
+        }
+
         /* --- FOOTER --- */
         footer {
             text-align: center;
-            padding: 100px 8% 40px;
+            padding: 60px 8% 40px;
             border-top: 1px solid rgba(255,255,255,0.05);
-            color: #444;
+            color: var(--subtext);
             font-size: 0.9rem;
-            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
             nav { padding: 0 5%; }
             .hero { padding-top: 150px; }
             .social-links { gap: 15px; }
-            .features { padding: 40px 5%; }
+            .features, .games-section { padding: 40px 5%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo"><span>KEY</span>STUDIOS</div>
+        <div class="logo"><span>Inn</span>Studios</div>
         <div class="social-links">
             <a href="https://www.roblox.com/communities/830443754" target="_blank">
                 <img src="https://static.wikia.nocookie.net/logopedia/images/d/d4/Roblox_2018_O_Icon_final_-_White.svg" alt="Roblox">
@@ -203,31 +283,66 @@
     </nav>
 
     <section class="hero">
-        <h1>Unlocking <span>New Worlds.</span></h1>
-        <p>A high-performance Roblox collective dedicated to pushing technical boundaries through immersive engineering.</p>
-        <a href="https://www.roblox.com/communities/830443754" class="btn">Join the Studio</a>
+        <h1>Welcome to <span>the Inn.</span></h1>
+        <p>We're just a group of devs making fun Roblox games. No corporate buzzwords, just good vibes and solid code.</p>
+        <a href="https://www.roblox.com/communities/830443754" class="btn">Join the Group</a>
     </section>
 
     <section class="features">
         <div class="feature-card">
-            <i data-lucide="key-round" size="48"></i>
-            <h3>Turnkey Systems</h3>
-            <p>From advanced UI frameworks to custom physics, we build ready-to-play foundations.</p>
+            <i data-lucide="hammer" size="40"></i>
+            <h3>Built to Last</h3>
+            <p>We make sure our games actually work and don't break when things get chaotic.</p>
         </div>
         <div class="feature-card">
-            <i data-lucide="sparkles" size="48"></i>
-            <h3>Visual Fidelity</h3>
-            <p>Utilizing Future lighting and custom PBR textures to redefine the Roblox aesthetic.</p>
+            <i data-lucide="sparkles" size="40"></i>
+            <h3>Eye Candy</h3>
+            <p>Using the latest lighting and textures so everything looks fresh and clean.</p>
         </div>
         <div class="feature-card">
-            <i data-lucide="cpu" size="48"></i>
-            <h3>Deep Optimization</h3>
-            <p>Clean Luau architecture designed for high-player counts and mobile compatibility.</p>
+            <i data-lucide="zap" size="40"></i>
+            <h3>Lag Free</h3>
+            <p>Nobody likes playing at 10 FPS. We optimize our stuff so anyone can play.</p>
+        </div>
+    </section>
+
+    <section class="games-section" id="games">
+        <h2 class="section-title">Our Games</h2>
+        
+        <div class="games-grid">
+            
+            <div class="game-card">
+                <img src="https://via.placeholder.com/600x337/1a1e24/00d4ff?text=Game+Thumbnail+Here" alt="Game 1" class="game-thumb">
+                <div class="game-info">
+                    <h3>Awesome Simulator</h3>
+                    <p>Click stuff, get pets, and explore new worlds. It's addicting, don't say we didn't warn you.</p>
+                    <a href="YOUR_ROBLOX_GAME_LINK" target="_blank" class="play-btn">Play on Roblox</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://via.placeholder.com/600x337/1a1e24/00d4ff?text=Game+Thumbnail+Here" alt="Game 2" class="game-thumb">
+                <div class="game-info">
+                    <h3>Epic Obby</h3>
+                    <p>Jump, dodge, and probably rage quit a few times. Can you make it to the end?</p>
+                    <a href="YOUR_ROBLOX_GAME_LINK" target="_blank" class="play-btn">Play on Roblox</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://via.placeholder.com/600x337/1a1e24/00d4ff?text=Game+Thumbnail+Here" alt="Game 3" class="game-thumb">
+                <div class="game-info">
+                    <h3>Mystery Project</h3>
+                    <p>We're cooking up something cool. Stay tuned in the Discord for sneak peeks.</p>
+                    <a href="https://discord.gg/6ZdSTtpNGA" target="_blank" class="play-btn">Join Discord</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 KEYSTUDIOS. INNOVATION UNLOCKED.</p>
+        <p>Made with 💙 by InnStudios. See you in-game.</p>
     </footer>
 
     <script>
