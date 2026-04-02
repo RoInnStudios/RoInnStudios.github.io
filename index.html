@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnStudios | Innovation in Every Brick</title>
+    <title>KeyStudios | Unlocking Imagination</title>
     
     <link rel="icon" type="image/png" href="images/favicon.png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -15,23 +15,24 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Prevents elements from pushing out of the screen */
+            box-sizing: border-box;
         }
 
         :root {
-            --green: #5ce65c;
-            --dark: #0a0a0a;
-            --card: #141414;
+            --blue: #00d4ff; /* Matches your new logo glow */
+            --blue-glow: rgba(0, 212, 255, 0.3);
+            --dark: #05070a; /* Deeper dark for more "sleek" feel */
+            --card: #0f1218;
             --text: #ffffff;
-            --subtext: #a0a0a0;
+            --subtext: #8b949e;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Lexend', sans-serif;
             background-color: var(--dark);
             color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden; /* Hard stop for horizontal scrolling */
+            overflow-x: hidden;
         }
 
         /* --- NAVIGATION --- */
@@ -41,201 +42,197 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 5%;
+            padding: 0 8%;
             position: fixed;
             top: 0;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            background: rgba(5, 7, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
             z-index: 1000;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 900;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo span { color: var(--green); }
+        /* The blue accent from your logo */
+        .logo span { color: var(--blue); }
 
         .social-links {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: brightness(0.8);
         }
 
-        .social-links a:hover { transform: scale(1.15); }
+        .social-links a:hover { 
+            transform: translateY(-2px); 
+            filter: brightness(1) drop-shadow(0 0 8px var(--blue));
+        }
 
-        /* Icon Sizes & Logo Colors */
         .social-links img {
-            height: 22px;
+            height: 20px;
             width: auto;
-            display: block;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 160px 5% 80px;
+            padding: 180px 8% 100px;
             text-align: center;
-            background: radial-gradient(circle at top, #1a331a 0%, var(--dark) 60%);
+            /* Blue radial gradient to match logo theme */
+            background: radial-gradient(circle at top, #003b4d 0%, var(--dark) 70%);
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.8rem, 8vw, 5.5rem);
             font-weight: 900;
             margin-bottom: 20px;
-            line-height: 1.1;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+            text-shadow: 0 0 30px var(--blue-glow);
         }
 
         .hero p {
             font-size: 1.2rem;
             color: var(--subtext);
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto 40px;
+            font-weight: 300;
         }
 
         .btn {
             display: inline-block;
-            background: var(--green);
+            background: var(--blue);
             color: #000;
-            padding: 16px 36px;
-            border-radius: 8px;
+            padding: 18px 40px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            transition: 0.3s ease;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px -10px var(--blue);
         }
 
         .btn:hover {
-            box-shadow: 0 0 30px rgba(92, 230, 92, 0.4);
-            transform: translateY(-3px);
+            box-shadow: 0 0 40px var(--blue-glow);
+            transform: scale(1.05);
         }
 
-        /* --- FEATURES (LUCIDE ICONS) --- */
+        /* --- FEATURES --- */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            padding: 80px 5%;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 8%;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .feature-card {
             background: var(--card);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
+            padding: 45px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
         }
 
         .feature-card:hover {
-            border-color: var(--green);
-            background: #1a1a1a;
+            border-color: var(--blue);
+            transform: translateY(-10px);
+            background: #14181f;
         }
 
         .feature-card i {
-            color: var(--green);
-            margin-bottom: 20px;
+            color: var(--blue);
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 10px var(--blue-glow));
         }
 
         .feature-card h3 {
-            margin-bottom: 12px;
-            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .feature-card p {
             color: var(--subtext);
             font-size: 1rem;
+            font-weight: 300;
         }
 
         /* --- FOOTER --- */
         footer {
             text-align: center;
-            padding: 60px 5%;
+            padding: 80px 8%;
             border-top: 1px solid rgba(255,255,255,0.05);
-            color: #555;
+            color: #444;
             font-size: 0.9rem;
         }
 
-        /* Responsive Fix for mobile */
-        @media (max-width: 600px) {
-            nav { padding: 0 20px; }
-            .social-links { gap: 12px; }
-            .social-links img { height: 18px; }
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 0 5%; }
+            .hero { padding-top: 140px; }
+            .social-links { gap: 15px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo"><span>+</span>InnStudios</div>
+        <div class="logo"><span>KEY</span>STUDIOS</div>
         <div class="social-links">
-            <a href="https://www.roblox.com/communities/830443754" target="_blank">
-                <img src="https://static.wikia.nocookie.net/logopedia/images/d/d4/Roblox_2018_O_Icon_final_-_White.svg" alt="Roblox">
-            </a>
-            <a href="https://discord.gg/6ZdSTtpNGA" target="_blank">
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/065/386/541/small/discord-white-icon-logo-app-transparent-background-premium-social-media-design-for-digital-download-free-png.png" alt="Discord">
-            </a>
-            <a href="https://www.youtube.com/@InnStudios" target="_blank">
-                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" alt="YouTube">
-            </a>
-            <a href="https://www.patreon.com/InnStudios" target="_blank">
-                <img src="https://improbable.com/wp-content/uploads/2020/08/logo-patreon-white.png" alt="Patreon">
-            </a>
+            <a href="#" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/d/d4/Roblox_2018_O_Icon_final_-_White.svg" alt="Roblox"></a>
+            <a href="#" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/065/386/541/small/discord-white-icon-logo-app-transparent-background-premium-social-media-design-for-digital-download-free-png.png" alt="Discord"></a>
+            <a href="#" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" alt="YouTube"></a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Innovation in <br>Every Brick.</h1>
-        <p>We are a high-performance Roblox development studio dedicated to pushing the technical boundaries of the engine.</p>
-        <a href="YOUR_ROBLOX_LINK" class="btn">Join Our Community</a>
+        <h1>Unlocking <span>New Worlds.</span></h1>
+        <p>A premier Roblox development collective focused on high-fidelity mechanics and immersive engineering.</p>
+        <a href="#" class="btn">Explore Our Projects</a>
     </section>
 
     <section class="features">
         <div class="feature-card">
-            <i data-lucide="cpu" size="40"></i>
-            <h3>Custom Systems</h3>
-            <p>Proprietary frameworks built from the ground up for maximum speed and security.</p>
+            <i data-lucide="key" size="44"></i>
+            <h3>Turnkey Solutions</h3>
+            <p>From UI design to complex backends, we provide complete systems that just work.</p>
         </div>
         <div class="feature-card">
-            <i data-lucide="palette" size="40"></i>
-            <h3>Visual Excellence</h3>
-            <p>Advanced lighting and PBR texturing that redefines the Roblox aesthetic.</p>
+            <i data-lucide="layers" size="44"></i>
+            <h3>Modern Aesthetic</h3>
+            <p>Leveraging PBR materials and future-lighting to create industry-leading visuals.</p>
         </div>
         <div class="feature-card">
-            <i data-lucide="code-2" size="40"></i>
-            <h3>Clean Architecture</h3>
-            <p>Modular, scalable Luau code designed for long-term project stability.</p>
-        </div>
-        <div class="feature-card">
-            <i data-lucide="zap" size="40"></i>
-            <h3>Performance First</h3>
-            <p>Optimized experiences ensuring smooth 60 FPS gameplay on all devices.</p>
-        </div>
-        <div class="feature-card">
-            <i data-lucide="users-2" size="40"></i>
-            <h3>Player Focused</h3>
-            <p>Mechanics designed to foster community engagement and long-term retention.</p>
-        </div>
-        <div class="feature-card">
-            <i data-lucide="shield-check" size="40"></i>
-            <h3>Secure Backend</h3>
-            <p>Rigorous security measures to protect player data and game integrity.</p>
+            <i data-lucide="terminal" size="44"></i>
+            <h3>Precision Code</h3>
+            <p>Highly optimized Luau scripting that keeps your game running smooth at 60 FPS.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 InnStudios. Innovation Starts Here.</p>
+        <p>&copy; 2026 KeyStudios. All rights reserved. Not affiliated with Roblox Corp.</p>
     </footer>
 
     <script>
-        // Initialize the Lucide Icons
         lucide.createIcons();
     </script>
 </body>
