@@ -4,113 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InnStudios | Innovation in Every Brick</title>
+    
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Prevents elements from pushing out of the screen */
+        }
+
         :root {
-            --brand-green: #5ce65c;
-            --bg-black: #0a0a0a;
-            --text-white: #ffffff;
+            --green: #5ce65c;
+            --dark: #0a0a0a;
+            --card: #141414;
+            --text: #ffffff;
+            --subtext: #a0a0a0;
         }
 
         body {
-            margin: 0;
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-white);
-            overflow-x: hidden;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden; /* Hard stop for horizontal scrolling */
         }
 
-        /* Navbar */
+        /* --- NAVIGATION --- */
         nav {
+            width: 100%;
+            height: 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px);
+            padding: 0 5%;
             position: fixed;
-            width: 100%;
             top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             z-index: 1000;
-            border-bottom: 1px solid #222;
         }
 
-        .logo { font-size: 1.5rem; font-weight: 800; }
-        .logo span { color: var(--brand-green); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
 
-        /* Social Icons Container */
+        .logo span { color: var(--green); }
+
         .social-links {
             display: flex;
-            gap: 15px; /* Adjusts the space between icons */
             align-items: center;
+            gap: 20px;
         }
 
         .social-links a {
             display: flex;
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .social-links a:hover {
-            opacity: 0.7;
-            transform: translateY(-2px);
-        }
-
-        /* Setting a consistent size for the linked logo images */
-        .social-links img {
-            width: 22px;
-            height: 22px;
-            object-fit: contain;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #152b15 0%, #0a0a0a 100%);
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .hero h1 { font-size: 4rem; margin-bottom: 10px; }
-        .hero p { color: #888; font-size: 1.2rem; margin-bottom: 30px; }
+        .social-links a:hover { transform: scale(1.15); }
+
+        /* Icon Sizes & Logo Colors */
+        .social-links img {
+            height: 22px;
+            width: auto;
+            display: block;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 160px 5% 80px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1a331a 0%, var(--dark) 60%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--subtext);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
 
         .btn {
-            background: var(--brand-green);
-            color: black;
-            padding: 12px 30px;
+            display: inline-block;
+            background: var(--green);
+            color: #000;
+            padding: 16px 36px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 800;
-            border-radius: 5px;
+            font-weight: 700;
+            transition: 0.3s ease;
         }
 
-        /* Features Section */
+        .btn:hover {
+            box-shadow: 0 0 30px rgba(92, 230, 92, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* --- FEATURES (LUCIDE ICONS) --- */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 60px 10%;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .feature-card {
-            background: #111;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #222;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
         }
 
-        .feature-card i { color: var(--brand-green); margin-bottom: 15px; }
+        .feature-card:hover {
+            border-color: var(--green);
+            background: #1a1a1a;
+        }
 
+        .feature-card i {
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: var(--subtext);
+            font-size: 1rem;
+        }
+
+        /* --- FOOTER --- */
         footer {
-            padding: 40px;
             text-align: center;
-            border-top: 1px solid #222;
-            color: #444;
+            padding: 60px 5%;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Fix for mobile */
+        @media (max-width: 600px) {
+            nav { padding: 0 20px; }
+            .social-links { gap: 12px; }
+            .social-links img { height: 18px; }
         }
     </style>
 </head>
@@ -119,47 +176,57 @@
     <nav>
         <div class="logo"><span>+</span>InnStudios</div>
         <div class="social-links">
-            <a href="YOUR_ROBLOX_LINK">
+            <a href="YOUR_ROBLOX_LINK" target="_blank">
                 <img src="https://static.wikia.nocookie.net/logopedia/images/d/d4/Roblox_2018_O_Icon_final_-_White.svg" alt="Roblox">
             </a>
-            <a href="YOUR_DISCORD_LINK">
+            <a href="YOUR_DISCORD_LINK" target="_blank">
                 <img src="https://www.svgrepo.com/show/353655/discord-icon.svg" style="filter: invert(1);" alt="Discord">
             </a>
-            <a href="YOUR_YOUTUBE_LINK">
+            <a href="YOUR_YOUTUBE_LINK" target="_blank">
                 <img src="https://www.svgrepo.com/show/475695/youtube-color.svg" alt="YouTube">
             </a>
-            <a href="YOUR_PATREON_LINK">
+            <a href="YOUR_PATREON_LINK" target="_blank">
                 <img src="https://www.svgrepo.com/show/354170/patreon-icon.svg" alt="Patreon">
             </a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Innovative Design.</h1>
-        <p>Crafting the future of Roblox experiences.</p>
-        <a href="YOUR_ROBLOX_LINK" class="btn">Explore Our Group</a>
+        <h1>Innovation in <br>Every Brick.</h1>
+        <p>We are a high-performance Roblox development studio dedicated to pushing the technical boundaries of the engine.</p>
+        <a href="YOUR_ROBLOX_LINK" class="btn">Join Our Community</a>
     </section>
 
     <section class="features">
         <div class="feature-card">
-            <i data-lucide="monitor"></i>
-            <h3>UI Design</h3>
-            <p>Sleek, modern interfaces for all players.</p>
+            <i data-lucide="cpu" size="40"></i>
+            <h3>Custom Systems</h3>
+            <p>Proprietary frameworks built from the ground up for maximum speed and security.</p>
         </div>
         <div class="feature-card">
-            <i data-lucide="shield-check"></i>
-            <h3>Secure Systems</h3>
-            <p>Advanced anti-cheat and optimized backend.</p>
+            <i data-lucide="palette" size="40"></i>
+            <h3>Visual Excellence</h3>
+            <p>Advanced lighting and PBR texturing that redefines the Roblox aesthetic.</p>
         </div>
         <div class="feature-card">
-            <i data-lucide="rocket"></i>
-            <h3>Fast Updates</h3>
-            <p>Constant innovation and new content.</p>
+            <i data-lucide="code-2" size="40"></i>
+            <h3>Clean Architecture</h3>
+            <p>Modular, scalable Luau code designed for long-term project stability.</p>
         </div>
         <div class="feature-card">
-            <i data-lucide="users"></i>
-            <h3>Community</h3>
-            <p>Built for the players, by the players.</p>
+            <i data-lucide="zap" size="40"></i>
+            <h3>Performance First</h3>
+            <p>Optimized experiences ensuring smooth 60 FPS gameplay on all devices.</p>
+        </div>
+        <div class="feature-card">
+            <i data-lucide="users-2" size="40"></i>
+            <h3>Player Focused</h3>
+            <p>Mechanics designed to foster community engagement and long-term retention.</p>
+        </div>
+        <div class="feature-card">
+            <i data-lucide="shield-check" size="40"></i>
+            <h3>Secure Backend</h3>
+            <p>Rigorous security measures to protect player data and game integrity.</p>
         </div>
     </section>
 
@@ -168,6 +235,7 @@
     </footer>
 
     <script>
+        // Initialize the Lucide Icons
         lucide.createIcons();
     </script>
 </body>
